@@ -1,0 +1,13 @@
+H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\obj\Debug\GlobalEmail_NET_REST.Properties.Resources.resources
+H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\obj\Debug\GlobalEmail-NET-REST.csproj.GenerateResource.cache
+H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\obj\Debug\GlobalEmail-NET-REST.csproj.CoreCompileInputs.cache
+H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\bin\Debug\GlobalEmail-NET-REST.exe.config
+H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\bin\Debug\GlobalEmail-NET-REST.exe
+H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\bin\Debug\GlobalEmail-NET-REST.pdb
+H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\bin\Debug\Newtonsoft.Json.dll
+H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\bin\Debug\Newtonsoft.Json.xml
+H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\obj\Debug\GlobalEmail-NET-REST.csprojAssemblyReference.cache
+H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\obj\Debug\GlobalEmail_NET_REST.Form1.resources
+H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\obj\Debug\GlobalEmail-NET-REST.csproj.CopyComplete
+H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\obj\Debug\GlobalEmail-NET-REST.exe
+H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\obj\Debug\GlobalEmail-NET-REST.pdb

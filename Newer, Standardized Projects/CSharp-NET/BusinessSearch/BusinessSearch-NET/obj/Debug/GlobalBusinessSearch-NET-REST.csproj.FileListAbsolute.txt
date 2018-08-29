@@ -1,0 +1,13 @@
+H:\git\CSharp-BusinessSearch-NET-REST\GlobalBusinessSearch-NET-REST\bin\Debug\GlobalBusinessSearch-NET-REST.exe.config
+H:\git\CSharp-BusinessSearch-NET-REST\GlobalBusinessSearch-NET-REST\bin\Debug\GlobalBusinessSearch-NET-REST.exe
+H:\git\CSharp-BusinessSearch-NET-REST\GlobalBusinessSearch-NET-REST\bin\Debug\GlobalBusinessSearch-NET-REST.pdb
+H:\git\CSharp-BusinessSearch-NET-REST\GlobalBusinessSearch-NET-REST\bin\Debug\Newtonsoft.Json.dll
+H:\git\CSharp-BusinessSearch-NET-REST\GlobalBusinessSearch-NET-REST\bin\Debug\Newtonsoft.Json.xml
+H:\git\CSharp-BusinessSearch-NET-REST\GlobalBusinessSearch-NET-REST\obj\Debug\GlobalBusinessSearch-NET-REST.csprojAssemblyReference.cache
+H:\git\CSharp-BusinessSearch-NET-REST\GlobalBusinessSearch-NET-REST\obj\Debug\GlobalBusinessSearch_NET_REST.Form1.resources
+H:\git\CSharp-BusinessSearch-NET-REST\GlobalBusinessSearch-NET-REST\obj\Debug\GlobalBusinessSearch_NET_REST.Properties.Resources.resources
+H:\git\CSharp-BusinessSearch-NET-REST\GlobalBusinessSearch-NET-REST\obj\Debug\GlobalBusinessSearch-NET-REST.csproj.GenerateResource.cache
+H:\git\CSharp-BusinessSearch-NET-REST\GlobalBusinessSearch-NET-REST\obj\Debug\GlobalBusinessSearch-NET-REST.csproj.CoreCompileInputs.cache
+H:\git\CSharp-BusinessSearch-NET-REST\GlobalBusinessSearch-NET-REST\obj\Debug\GlobalBusinessSearch-NET-REST.csproj.CopyComplete
+H:\git\CSharp-BusinessSearch-NET-REST\GlobalBusinessSearch-NET-REST\obj\Debug\GlobalBusinessSearch-NET-REST.exe
+H:\git\CSharp-BusinessSearch-NET-REST\GlobalBusinessSearch-NET-REST\obj\Debug\GlobalBusinessSearch-NET-REST.pdb

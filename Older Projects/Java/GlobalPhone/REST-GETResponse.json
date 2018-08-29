@@ -1,0 +1,33 @@
+{
+	"Version": "4.0.0.79",
+	"TransmissionReference": "",
+	"TransmissionResults": "",
+	"Records": [
+		{
+			"RecordID": "1",
+			"Results": "PS01,PS07,PS20",
+			"PhoneNumber": "9496076719",
+			"AdministrativeArea": "California",
+			"CountryAbbreviation": "US",
+			"CountryName": "United States",
+			"Carrier": "VERIZON WIRELESS-CA",
+			"CallerID": "",
+			"DST": "Y",
+			"InternationalPhoneNumber": "+19496076719",
+			"Language": "English",
+			"Latitude": "33.544020",
+			"Locality": "Laguna Beach",
+			"Longitude": "-117.782370",
+			"PhoneInternationalPrefix": "",
+			"PhoneCountryDialingCode": "1",
+			"PhoneNationPrefix": "1",
+			"PhoneNationalDestinationCode": "949",
+			"PhoneSubscriberNumber": "6076719",
+			"UTC": "-08:00",
+			"TimeZoneCode": "PST",
+			"TimeZoneName": "Pacific Time",
+			"PostalCode": "92651",
+			"Suggestions": null
+		}
+	]
+}

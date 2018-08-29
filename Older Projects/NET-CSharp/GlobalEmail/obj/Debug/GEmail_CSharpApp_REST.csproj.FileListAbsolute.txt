@@ -1,0 +1,10 @@
+C:\Users\alyssa\Downloads\GPhone_Csharp\Global Phone Demoer\GEmail_CSharpApp_REST\bin\Debug\GEmail_CSharpApp.exe.config
+C:\Users\alyssa\Downloads\GPhone_Csharp\Global Phone Demoer\GEmail_CSharpApp_REST\bin\Debug\GEmail_CSharpApp.exe
+C:\Users\alyssa\Downloads\GPhone_Csharp\Global Phone Demoer\GEmail_CSharpApp_REST\bin\Debug\GEmail_CSharpApp.pdb
+C:\Users\alyssa\Downloads\GPhone_Csharp\Global Phone Demoer\GEmail_CSharpApp_REST\obj\Debug\GEmail_CSharpApp_REST.csprojAssemblyReference.cache
+C:\Users\alyssa\Downloads\GPhone_Csharp\Global Phone Demoer\GEmail_CSharpApp_REST\obj\Debug\GEmail_CSharpApp.Form1.resources
+C:\Users\alyssa\Downloads\GPhone_Csharp\Global Phone Demoer\GEmail_CSharpApp_REST\obj\Debug\GEmail_CSharpApp.Properties.Resources.resources
+C:\Users\alyssa\Downloads\GPhone_Csharp\Global Phone Demoer\GEmail_CSharpApp_REST\obj\Debug\GEmail_CSharpApp_REST.csproj.GenerateResource.cache
+C:\Users\alyssa\Downloads\GPhone_Csharp\Global Phone Demoer\GEmail_CSharpApp_REST\obj\Debug\GEmail_CSharpApp_REST.csproj.CoreCompileInputs.cache
+C:\Users\alyssa\Downloads\GPhone_Csharp\Global Phone Demoer\GEmail_CSharpApp_REST\obj\Debug\GEmail_CSharpApp.exe
+C:\Users\alyssa\Downloads\GPhone_Csharp\Global Phone Demoer\GEmail_CSharpApp_REST\obj\Debug\GEmail_CSharpApp.pdb

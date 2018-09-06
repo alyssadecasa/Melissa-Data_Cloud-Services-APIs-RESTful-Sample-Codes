@@ -151,15 +151,6 @@
         $('.ui.dropdown').dropdown();
         $('.ui.accordion').accordion();
 
-        $('#selectAll').change(function () {
-            if ($(this).prop('checked')) {
-               $('input').prop('checked', true);
-            } else {
-                $('input').prop('checked', false);
-            }
-        });
-        $('#selectAll').trigger('change');
-
         function getOpt() {
             var opt = "";
             if ($('input[name=opt_CallerID]').val() != "") opt += "CallerID:" + $('input[name=opt_CallerID]').val() + ",";

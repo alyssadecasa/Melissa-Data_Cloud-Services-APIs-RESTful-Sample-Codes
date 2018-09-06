@@ -1,9 +1,9 @@
 ![alt text](https://www.melissa.com/_borders17/nav/2017/images/melissa-global-intelligence.png)
 
-# Global Email API C# REST Sample Code
+# Global Email API HTML/JavaScript REST Sample Code
 
-This is a sample code for Melissa's Global Email API. It is written in C# and accesses the API through REST. 
-This sample is intended to show the functionality of the Global Email Web Service and how to call the service in C#. 
+This is a sample code for Melissa's Global Email API. It is written in HTML and JavaScript and accesses the API through REST. 
+This sample is intended to show the functionality of the Global Email Web Service and how to call the service in HTML/JavaScript. 
 
 
 ## Getting Started
@@ -17,31 +17,24 @@ These instructions will get you a copy of the sample project up and running on y
 This sample is intended for use after a web service account has been created and you have a license string.
 If you do not, please contact sales (800-800-6245 ext. 3) for a trial.
 
-**.NET Compiler Compatibility**
+**Web Browser Support**
 
-| Version  | Compatibility |
-| ---------- | ----------- |
-| 2.0  | No  |
-| 3.0  | No  |
-| 3.5  | No  |
-| 4.0  | Yes |
-| 4.5  | Yes |
-| 4.6  | Yes |
-| 4.7  | Yes |
+| Compatibility | Version  |
+| ----------- | ---------- |
+| Yes | Firefox 60+ |
+| Yes | Chrome 68+ |
+| Yes | Safari Mac 11+ |
+| Yes | Internet Explorer 11+ |
+| Yes | Android 4.4+, Chrome for Android 44+ |
+| Yes | iOS Safari 7+ |
+| Yes | Microsoft Edge 12+ |
 
-### Installing
+### Installing and Running the Sample
 
-No installation is necessary for this sample project. Simply open the GlobalEmail-NET-REST.sln file in your Visual Studio.
-
-
-## Running the Sample
-
-To run in Visual Studio, go to  File | Open | Project/Solution and specify the solution file (*.sln ).
-Alternatively you should just be able to double click on the solution file and this will open Visual Studio automatically. 
-In Visual Studio, compile the project and then run. This is a Windows Forms sample and an interface should appear. 
-
+No installation is necessary for this sample project. Simply open the GlobalEmailDemo.html file in your browser to run. 
 
 When the sample is up and running, make sure to enter your license string first as provided by the account representative. 
+
 Then you may submit a request to the API. 
 
 

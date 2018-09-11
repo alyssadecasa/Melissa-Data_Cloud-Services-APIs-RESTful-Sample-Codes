@@ -29,9 +29,6 @@
 		<br>
     </div>	
 	<br>
-	<div class="wiki">
-		
-	</div>
     <div class="main ui container">	
         <div class="ui top attached tabular menu">
             <a class="item active" data-tab="tab-name">Input</a>
@@ -42,13 +39,13 @@
         <div class="ui bottom attached tab segment active" data-tab="tab-name">
             <div class="ui two column stackable grid container">
                 <div class="column">
-				<a href="http://wiki.melissadata.com/index.php?title=Business_Coder">Business Coder Wiki</a>
+					<a href="http://wiki.melissadata.com/index.php?title=Business_Coder">Business Coder Wiki</a>
                     <!-- License Key -->
                     <div class="ui info message">					
                         <div class="header">
                             License Key
                         </div>
-                        Enter here your encrypted and unique license key from Melissa Data. This is necessary for including with each request to the web service. If you do not have a license key, please contact your Melissa Data sales representative at 1-800-MELISSA (1-800-635-4772)
+                        <p>Enter here your encrypted and unique license key from Melissa Data. This is necessary for including with each request to the web service. If you do not have a license key, please contact your Melissa Data sales representative at 1-800-MELISSA (1-800-635-4772)</p>
                     </div>
                     <div class="ui input right fluid field">
                         <input type="text" placeholder="License Key..." name="id">
@@ -70,7 +67,7 @@
 					<div class="ui two column stackable grid container">
 						<div class="column">
                             <div class="ui checkbox">
-                                <input id='selectAll' type="checkbox" name="selectAllCheckbox"> 
+                                <input id='selectAll' type="checkbox"> 
                                 <label>Select All</label>
                             </div>
                             <br>
@@ -178,7 +175,7 @@
                             <div class="item" data-value="no">No</div>
                         </div>
                     </div>
-                    <!-- SIC NAICS Confidence -->
+                    <!-- Option - SIC NAICS Confidence -->
                     <div class="ui selection dropdown">
                         <input type="hidden" name="opt_sicNaicsConfidence">
                         <i class="dropdown icon"></i>
@@ -281,7 +278,6 @@
     <script>
         $('.menu .item').tab();
         $('.ui.dropdown').dropdown();
-        $('.ui.accordion').accordion();
 
         $('#selectAll').change(function () {
             if ($(this).prop('checked')) {

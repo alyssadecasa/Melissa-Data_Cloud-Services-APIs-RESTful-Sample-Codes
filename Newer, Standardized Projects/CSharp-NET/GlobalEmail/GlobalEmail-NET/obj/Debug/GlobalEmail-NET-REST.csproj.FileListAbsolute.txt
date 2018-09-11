@@ -11,3 +11,16 @@ H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\obj\Debug\GlobalEmail_NE
 H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\obj\Debug\GlobalEmail-NET-REST.csproj.CopyComplete
 H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\obj\Debug\GlobalEmail-NET-REST.exe
 H:\git\CSharp-GlobalEmail-NET-REST\GlobalEmail-NET-REST\obj\Debug\GlobalEmail-NET-REST.pdb
+H:\git-personal\Melissa-Data_Cloud-Services-APIs-RESTful-Sample-Codes\Newer, Standardized Projects\CSharp-NET\GlobalEmail\GlobalEmail-NET\bin\Debug\GlobalEmail-NET-REST.exe.config
+H:\git-personal\Melissa-Data_Cloud-Services-APIs-RESTful-Sample-Codes\Newer, Standardized Projects\CSharp-NET\GlobalEmail\GlobalEmail-NET\bin\Debug\GlobalEmail-NET-REST.exe
+H:\git-personal\Melissa-Data_Cloud-Services-APIs-RESTful-Sample-Codes\Newer, Standardized Projects\CSharp-NET\GlobalEmail\GlobalEmail-NET\bin\Debug\GlobalEmail-NET-REST.pdb
+H:\git-personal\Melissa-Data_Cloud-Services-APIs-RESTful-Sample-Codes\Newer, Standardized Projects\CSharp-NET\GlobalEmail\GlobalEmail-NET\bin\Debug\Newtonsoft.Json.dll
+H:\git-personal\Melissa-Data_Cloud-Services-APIs-RESTful-Sample-Codes\Newer, Standardized Projects\CSharp-NET\GlobalEmail\GlobalEmail-NET\bin\Debug\Newtonsoft.Json.xml
+H:\git-personal\Melissa-Data_Cloud-Services-APIs-RESTful-Sample-Codes\Newer, Standardized Projects\CSharp-NET\GlobalEmail\GlobalEmail-NET\obj\Debug\GlobalEmail-NET-REST.csprojAssemblyReference.cache
+H:\git-personal\Melissa-Data_Cloud-Services-APIs-RESTful-Sample-Codes\Newer, Standardized Projects\CSharp-NET\GlobalEmail\GlobalEmail-NET\obj\Debug\GlobalEmail_NET_REST.Form1.resources
+H:\git-personal\Melissa-Data_Cloud-Services-APIs-RESTful-Sample-Codes\Newer, Standardized Projects\CSharp-NET\GlobalEmail\GlobalEmail-NET\obj\Debug\GlobalEmail_NET_REST.Properties.Resources.resources
+H:\git-personal\Melissa-Data_Cloud-Services-APIs-RESTful-Sample-Codes\Newer, Standardized Projects\CSharp-NET\GlobalEmail\GlobalEmail-NET\obj\Debug\GlobalEmail-NET-REST.csproj.GenerateResource.cache
+H:\git-personal\Melissa-Data_Cloud-Services-APIs-RESTful-Sample-Codes\Newer, Standardized Projects\CSharp-NET\GlobalEmail\GlobalEmail-NET\obj\Debug\GlobalEmail-NET-REST.csproj.CoreCompileInputs.cache
+H:\git-personal\Melissa-Data_Cloud-Services-APIs-RESTful-Sample-Codes\Newer, Standardized Projects\CSharp-NET\GlobalEmail\GlobalEmail-NET\obj\Debug\GlobalEmail-NET-REST.csproj.CopyComplete
+H:\git-personal\Melissa-Data_Cloud-Services-APIs-RESTful-Sample-Codes\Newer, Standardized Projects\CSharp-NET\GlobalEmail\GlobalEmail-NET\obj\Debug\GlobalEmail-NET-REST.exe
+H:\git-personal\Melissa-Data_Cloud-Services-APIs-RESTful-Sample-Codes\Newer, Standardized Projects\CSharp-NET\GlobalEmail\GlobalEmail-NET\obj\Debug\GlobalEmail-NET-REST.pdb

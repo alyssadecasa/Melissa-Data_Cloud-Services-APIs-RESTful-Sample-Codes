@@ -55,16 +55,12 @@
             this.txtPostalCodeIn = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tabOptions = new System.Windows.Forms.TabPage();
-            this.label15 = new System.Windows.Forms.Label();
-            this.optSortBy = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.optPageReturned = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.optRecordsPerPage = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.optReturnAllPages = new System.Windows.Forms.CheckBox();
-            this.optMaxPhone = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.optSearchCondition = new System.Windows.Forms.ComboBox();
             this.optSearchType = new System.Windows.Forms.ComboBox();
@@ -517,8 +513,6 @@
             // tabOptions
             // 
             this.tabOptions.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.tabOptions.Controls.Add(this.label15);
-            this.tabOptions.Controls.Add(this.optSortBy);
             this.tabOptions.Controls.Add(this.groupBox1);
             this.tabOptions.Controls.Add(this.label17);
             this.tabOptions.Controls.Add(this.optSearchCondition);
@@ -533,46 +527,6 @@
             this.tabOptions.TabIndex = 1;
             this.tabOptions.Text = "Options";
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(20, 505);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(48, 15);
-            this.label15.TabIndex = 88;
-            this.label15.Text = "Sort By";
-            // 
-            // optSortBy
-            // 
-            this.optSortBy.DropDownHeight = 80;
-            this.optSortBy.FormattingEnabled = true;
-            this.optSortBy.IntegralHeight = false;
-            this.optSortBy.Items.AddRange(new object[] {
-            "PostalCode-ascending",
-            "PostalCode-descending",
-            "Locality-ascending",
-            "Locality-descending",
-            "AddressLine1-ascending",
-            "AddressLine1-descending",
-            "CompanyName-ascending",
-            "CompanyName-descending",
-            "MelissaEnterpriseKey-ascending",
-            "MelissaEnterpriseKey-descending",
-            "StockTicker-ascending",
-            "StockTicker-descending",
-            "URL-ascending",
-            "URL-descending",
-            "MoveDate-ascending",
-            "MoveDate-descending",
-            "MelissaAddressKey-ascending",
-            "MelissaAddressKey-descending",
-            "MelissaAddressKeyBase-ascending",
-            "MelissaAddressKeyBase-descending"});
-            this.optSortBy.Location = new System.Drawing.Point(23, 523);
-            this.optSortBy.Name = "optSortBy";
-            this.optSortBy.Size = new System.Drawing.Size(239, 23);
-            this.optSortBy.TabIndex = 87;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.optPageReturned);
@@ -580,12 +534,10 @@
             this.groupBox1.Controls.Add(this.optRecordsPerPage);
             this.groupBox1.Controls.Add(this.label28);
             this.groupBox1.Controls.Add(this.optReturnAllPages);
-            this.groupBox1.Controls.Add(this.optMaxPhone);
-            this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Location = new System.Drawing.Point(23, 20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(239, 234);
+            this.groupBox1.Size = new System.Drawing.Size(239, 184);
             this.groupBox1.TabIndex = 86;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Page Options";
@@ -608,7 +560,7 @@
             // 
             // optRecordsPerPage
             // 
-            this.optRecordsPerPage.Location = new System.Drawing.Point(6, 168);
+            this.optRecordsPerPage.Location = new System.Drawing.Point(6, 129);
             this.optRecordsPerPage.Name = "optRecordsPerPage";
             this.optRecordsPerPage.Size = new System.Drawing.Size(176, 23);
             this.optRecordsPerPage.TabIndex = 94;
@@ -616,7 +568,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(3, 150);
+            this.label28.Location = new System.Drawing.Point(6, 111);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(104, 15);
             this.label28.TabIndex = 93;
@@ -632,26 +584,10 @@
             this.optReturnAllPages.Text = "Return All Pages";
             this.optReturnAllPages.UseVisualStyleBackColor = true;
             // 
-            // optMaxPhone
-            // 
-            this.optMaxPhone.Location = new System.Drawing.Point(6, 117);
-            this.optMaxPhone.Name = "optMaxPhone";
-            this.optMaxPhone.Size = new System.Drawing.Size(176, 23);
-            this.optMaxPhone.TabIndex = 90;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(3, 99);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(179, 15);
-            this.label20.TabIndex = 89;
-            this.label20.Text = "Max Phone Numbers Returned";
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(20, 394);
+            this.label17.Location = new System.Drawing.Point(20, 304);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(101, 15);
             this.label17.TabIndex = 79;
@@ -664,7 +600,7 @@
             "Strict (Default)",
             "Progressive",
             "Loose"});
-            this.optSearchCondition.Location = new System.Drawing.Point(23, 411);
+            this.optSearchCondition.Location = new System.Drawing.Point(23, 321);
             this.optSearchCondition.Name = "optSearchCondition";
             this.optSearchCondition.Size = new System.Drawing.Size(239, 23);
             this.optSearchCondition.TabIndex = 76;
@@ -678,7 +614,7 @@
             "AddressSearch",
             "PhoneSearch",
             "CompanySearch"});
-            this.optSearchType.Location = new System.Drawing.Point(23, 289);
+            this.optSearchType.Location = new System.Drawing.Point(23, 251);
             this.optSearchType.MaxDropDownItems = 4;
             this.optSearchType.Name = "optSearchType";
             this.optSearchType.Size = new System.Drawing.Size(239, 23);
@@ -688,7 +624,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(20, 271);
+            this.label24.Location = new System.Drawing.Point(20, 233);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(74, 15);
             this.label24.TabIndex = 73;
@@ -936,10 +872,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtAdministrativeAreaIn;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox optSortBy;
-        private System.Windows.Forms.TextBox optMaxPhone;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox optPageReturned;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox optRecordsPerPage;

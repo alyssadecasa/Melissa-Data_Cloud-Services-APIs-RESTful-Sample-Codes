@@ -55,14 +55,6 @@ namespace GlobalBusinessSearch_NET_REST
             if (optSearchCondition.SelectedIndex != 0)
                 Options += "SearchCondition:" + optSearchCondition.SelectedText + ";";
 
-            // Set the sort by option
-            if (!string.IsNullOrEmpty(optSortBy.SelectedText))
-                Options += "SortBy:" + optSortBy.SelectedText + ";";
-
-            // Set the max phone numbers returned option
-            if (!string.IsNullOrEmpty(optMaxPhone.SelectedText) && !optMaxPhone.SelectedText.Equals("3"))
-                Options += "MaxPhone:" + optMaxPhone.SelectedText + ";";
-
             // Set the records per page returned option
             if (!string.IsNullOrEmpty(optRecordsPerPage.SelectedText) && !optRecordsPerPage.SelectedText.Equals("5"))
                 Options += "RecordsPerPage:" + optRecordsPerPage.SelectedText + ";";
@@ -172,12 +164,10 @@ namespace GlobalBusinessSearch_NET_REST
 
             // Reset options to defaults
             optReturnAllPages.Checked = false;
-            optMaxPhone.Text = string.Empty;    //todo: appends instead of setting
             optRecordsPerPage.Text = string.Empty;
             optPageReturned.Text = string.Empty;
             optSearchType.SelectedIndex = 0;
             optSearchCondition.SelectedIndex = 0;
-            optSortBy.Text = string.Empty;
 
             // Reset columns to defaults
             for (int i = 0; i < cols.Items.Count; i++)

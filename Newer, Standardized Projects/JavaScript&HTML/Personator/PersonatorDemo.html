@@ -53,7 +53,6 @@
                     <div class="ui input right fluid field">
                         <input type="text" placeholder="License Key..." name="id">
                     </div>
-                    <p>
                     <!-- Actions -->
                     <div class="ui info message">                    
                         <div class="header">
@@ -92,7 +91,6 @@
                             <br>
                         </div>
                     </div>
-                    <p>
                     <!-- Column Responses -->
                     <div class="ui info message">
                         <div class="header">
@@ -208,218 +206,6 @@
                             <br>
 						</div>
 					</div>
-                    <p>
-                    <!-- Check Address options -->
-                    <div class="ui info message">
-                        <div class="header">
-                            Address Options
-                        </div>
-						<ul class="list">
-                            <li>Use Preferred City - Substitute any vanity city names for the preferred name</li>
-                            <li>Diacritics - Determines whether diacritics will be returned</li>
-                            <li>Advanced Address Correction - Use name input to perform advanced address corrections</li>
-                            <li>Long Address Format - Determines whether suffixes and directionals are abbreviated or spelled out</li>
-                        </ul>
-                    </div>
-                    <!-- Check Address option - Use Preferred City -->
-                    <div class="ui selection dropdown">
-                        <input type="hidden" name="optAddress_PreferredCity">
-                        <i class="dropdown icon"></i>
-                        <div class="default text">Use Preferred City</div>
-                        <div class="menu">
-                            <div class="item" data-value="on">On</div>
-                            <div class="item" data-value="off">Off</div>					
-                        </div>
-                    </div>
-                    <!-- Check Address option - Diacritics -->
-                    <div class="ui selection dropdown">
-                        <input type="hidden" name="optAddress_Diacritics">
-                        <i class="dropdown icon"></i>
-                        <div class="default text">Diacritics</div>
-                        <div class="menu">
-                            <div class="item" data-value="on">On</div>
-                            <div class="item" data-value="off">Off</div>
-                            <div class="item" data-value="auto">Auto</div>
-                        </div>
-                    </div>
-                    <!-- Check Address option - Advanced Address Correction -->
-                    <div class="ui selection dropdown">
-                        <input type="hidden" name="optAddress_AdvAddressCorrection">
-                        <i class="dropdown icon"></i>
-                        <div class="default text">Adv. Address Correction</div>
-                        <div class="menu">
-                            <div class="item" data-value="on">On</div>
-                            <div class="item" data-value="off">Off</div>
-                        </div>
-                    </div>
-                    <!-- Check Address option - Long Address Format -->
-                    <div class="ui selection dropdown">
-                        <input type="hidden" name="optAddress_LongAddressFormat">
-                        <i class="dropdown icon"></i>
-                        <div class="default text">Long Address Format</div>
-                        <div class="menu">
-                            <div class="item" data-value="on">On</div>
-                            <div class="item" data-value="off">Off</div>
-                            <div class="item" data-value="auto">Auto</div>
-                        </div>
-                    </div>
-                    <p>                    
-                    <!-- Check Email options -->
-                    <div class="ui info message">
-                        <div class="header">
-                            Email Options
-                        </div>
-                        <ul class="list">
-                            <li>Correct Syntax - Corrects email syntax</li>
-                            <li>Update Domain - Determines whether the domain name is out of date and updates it</li>
-                            <li>Database Lookup - Attempts verification of domain names using a database of valid domains</li>
-                            <li>Standardize Casing - Changes all letters in the email field to lower case before checking</li>
-                        </ul>
-                    </div>
-                    <p>
-                    <div class="content">
-                        <!-- Check Email option - Correct Syntax -->
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="optEmail_CorrectSyntax">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Correct Syntax</div>
-                            <div class="menu">
-                                <div class="item" data-value="on">On</div>
-                                <div class="item" data-value="off">Off</div>
-                            </div>
-                        </div>
-                        <!-- Check Email option - Update Domain -->
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="optEmail_UpdateDomain">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Update Domain</div>
-                            <div class="menu">
-                                <div class="item" data-value="on">On</div>
-                                <div class="item" data-value="off">Off</div>
-                            </div>
-                        </div>
-                        <!-- Check Email option - Database Lookup -->
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="optEmail_DatabaseLookup">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Database Lookup</div>
-                            <div class="menu">
-                                <div class="item" data-value="on">On</div>
-                                <div class="item" data-value="off">Off</div>
-                            </div>
-                        </div>
-                        <!-- Check Email option - Standardize Casing -->
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="optEmail_StandardizeCasing">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Standardize Casing</div>
-                            <div class="menu">
-                                <div class="item" data-value="on">On</div>
-                                <div class="item" data-value="off">Off</div>
-                            </div>
-                        </div>
-                        <p>
-                    </div>
-                    <!-- Check Name options -->
-                    <div class="ui info message">
-                        <div class="header">
-                            Name Options
-                        </div>
-                        <ul class="list">
-                            <li>Correct First Name - Allows common spelling corrections for the First Name field</li>
-                            <li>Standardize Company - Performs standard abbreviation, capitalization, and punctuation for the Company Name field</li>
-                            <li>Name Hint - Sets the name hint for the input name</li>
-                            <li>Gender Population - Sets the gender balance of the source data, either predominantly male, female, or mixed (evenly split)</li>
-                            <li>Gender Aggression - Sets how aggressive genderization is for neutral first names</li>
-                            <li>Middle Name Logic - Determines the handling of middle names</li>
-                            <li>Salutation Format - Sets the salutation format for the response</li>
-                        </ul>
-                    </div>
-                    <p>
-                    <div class="content">
-                       <!-- Check Name option - Correct First Name -->
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="optName_CorrectFirstName">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Correct First Name</div>
-                            <div class="menu">
-                                <div class="item" data-value="on">On</div>
-                                <div class="item" data-value="off">Off</div>
-                            </div>
-                        </div>
-                        <!-- Check Name option - Standardize Company -->
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="optName_StandardizeCompany">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Standardize Company</div>
-                            <div class="menu">
-                                <div class="item" data-value="on">On</div>
-                                <div class="item" data-value="off">Off</div>
-                            </div>
-                        </div>
-                        <!-- Check Name option - Name Hint -->
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="optName_NameHint">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Name Hint</div>
-                            <div class="menu">
-                                <div class="item" data-value="varying">Varying</div>
-                                <div class="item" data-value="definitelyfull">Definitely Full</div>
-                                <div class="item" data-value="verylikelyfull">Very Likely Full</div>
-                                <div class="item" data-value="probablyfull">Probably Full</div>
-                                <div class="item" data-value="probablyinverse">Probably Inverse</div>
-                                <div class="item" data-value="verylikelyinverse">Very Likely Inverse</div>
-                                <div class="item" data-value="definitelyinverse">Definitely Inverse</div>
-                                <div class="item" data-value="mixedfirstname">Mixed First Name</div>
-                                <div class="item" data-value="mixedlastname">Mixed Last Name</div>
-                            </div>
-                        </div>
-                        <!-- Check Name option - Gender Population -->
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="optName_GenderPopulation">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Gender Population</div>
-                            <div class="menu">
-                                <div class="item" data-value="mixed">Mixed</div>
-                                <div class="item" data-value="male">Male</div>
-                                <div class="item" data-value="female">Female</div>
-                            </div>
-                        </div>
-                        <!-- Check Name option - Gender Aggression -->
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="optName_GenderAggression">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Gender Aggression</div>
-                            <div class="menu">
-                                <div class="item" data-value="neutral">Neutral</div>
-                                <div class="item" data-value="conservative">Conservative</div>
-                                <div class="item" data-value="aggressive">Aggressive</div>
-                            </div>
-                        </div>
-                        <!-- Check Name option - Middle Name Logic -->
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="optName_MiddleNameLogic">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Middle Name Logic</div>
-                            <div class="menu">
-                                <div class="item" data-value="parselogic">Parse Logic</div>
-                                <div class="item" data-value="hyphenatedlast">Hyphenated Last Name</div>
-                                <div class="item" data-value="middlename">Midle Name</div>
-                            </div>
-                        </div>
-                        <!-- Check Name option - Salutation Format -->
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="optName_SalutationFormat">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Salutation Format</div>
-                            <div class="menu">
-                                <div class="item" data-value="formal">Formal</div>
-                                <div class="item" data-value="informal">Informal</div>
-                                <div class="item" data-value="firstlast">First Last</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Append options -->
                     <div class="ui info message">
                         <div class="header">
                             Verification and Appending Options
@@ -429,39 +215,38 @@
                             <li>Append - Determines whether to return information. When set to blank, it returns information only when the input field is blank. Check Error returns information when there are errors in the input</li>
                         </ul>
                     </div>
-                    <p>
-                    <div class="content">
-                        <!-- Append options - Centric Hint -->
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="optAppend_CentricHint">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Centric Hint</div>
-                            <div class="menu">
-                                <div class="item" data-value="auto">Auto</div>
-                                <div class="item" data-value="address">Address</div>
-                                <div class="item" data-value="phone">Phone</div>
-                                <div class="item" data-value="email">Email</div>
+                    <div class="ui two column stackable grid container">
+                        <div class="column">
+                            <div class="ui selection dropdown">
+                                <input type="hidden" name="optAppend_CentricHint">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Centric Hint</div>
+                                <div class="menu">
+                                    <div class="item" data-value="auto">Auto</div>
+                                    <div class="item" data-value="address">Address</div>
+                                    <div class="item" data-value="phone">Phone</div>
+                                    <div class="item" data-value="email">Email</div>
+                                </div>
                             </div>
                         </div>
-                        <!-- Append Options - Append -->
-                        <div class="ui selection dropdown">
-                            <input type="hidden" name="optAppend_Append">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Append</div>
-                            <div class="menu">
-                                <div class="item" data-value="blank">Blank</div>
-                                <div class="item" data-value="checkerror">Check Error</div>
-                                <div class="item" data-value="always">Always</div>
+                        <div class="column">
+                            <div class="ui selection dropdown">
+                                <input type="hidden" name="optAppend_Append">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Append</div>
+                                <div class="menu">
+                                    <div class="item" data-value="blank">Blank</div>
+                                    <div class="item" data-value="checkerror">Check Error</div>
+                                    <div class="item" data-value="always">Always</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="column">
 					<h1>Personal Identity Information</h1>
-					<p>
 
                     <h4>Name</h4>
-                    <p>
                     <div class="ui input right fluid">
                         <input type="text" placeholder="First Name..." name="first">
                     </div>
@@ -473,7 +258,6 @@
                     <div class="ui input right fluid">
                         <input type="text" placeholder="Full Name..." name="full">
                     </div>
-                    <p>
 
 					<h4>Address</h4>
                     <div class="ui input right fluid">
@@ -503,7 +287,6 @@
                     <div class="ui input right fluid">
                         <input type="text" placeholder="Last Line (City, State, and Zip)..." name="lastline">
                     </div>
-                    <p> 
 
 					<h4>Birthdate and SSN</h4>
                     <div class="ui input right fluid">
@@ -521,10 +304,8 @@
                     <div class="ui input right fluid">
                         <input type="text" placeholder="Social Security Number (Full or Last 4 Digits)..." name="ss">
                     </div>
-                    <p>
 
                     <h4>Other</h4>
-                    <p>
                     <div class="ui input right fluid">
                         <input type="text" placeholder="Company Name..." name="comp">
                     </div>
@@ -544,7 +325,6 @@
                     <div class="ui input right fluid">
                         <input type="text" placeholder="Melissa Address Key..." name="mak">
                     </div>
-                    <p>
 
                     <h4>Free Form Input</h4>
                     <div class="ui info message">
@@ -554,8 +334,8 @@
                     <div class="ui form">
                         <textarea name="ff" rows="5" placeholder="Free Form Input..."></textarea>                           
                     </div>
-                    <p>
-                    <p><br>
+                    <br>
+                    <br>
                     <button class="ui icon button normal" onclick="doClear()">
                         <i class="erase icon"></i>
                         Clear
@@ -587,7 +367,6 @@
     <script>
         $('.menu .item').tab();
         $('.ui.dropdown').dropdown();
-        $('.ui.accordion').accordion();
 
         $('#selectAll').change(function () {
             if ($(this).prop('checked')) {
@@ -633,32 +412,8 @@
 
         function getOpt() {
             var opt = "";
-
-            // get Check Address Options
-            if ($('input[name=optAddress_PreferredCity]').val() != "") opt += "UsePreferredCity:" + $('input[name=optAddress_PreferredCity]').val() + ",";
-            if ($('input[name=optAddress_Diacritics]').val() != "") opt += "Diacritics:" + $('input[name=optAddress_Diacritics]').val() + ",";
-            if ($('input[name=optAddress_AdvAddressCorrection]').val() != "") opt += "AdvancedAddressCorrection:" + $('input[name=optAddress_AdvAddressCorrection]').val() + ",";
-            if ($('input[name=optAddress_LongAddressFormat]').val() != "") opt += "LongAddressFormat:" + $('input[name=optAddress_LongAddressFormat]').val() + ",";	
-
-            // get Check Email Options
-            if ($('input[name=optEmail_CorrectSyntax]').val() != "") opt += "CorrectSyntax:" + $('input[name=optEmail_CorrectSyntax]').val() + ",";
-            if ($('input[name=optEmail_UpdateDomain]').val() != "") opt += "UpdateDomain:" + $('input[name=optEmail_UpdateDomain]').val() + ",";
-            if ($('input[name=optEmail_DatabaseLookup]').val() != "") opt += "DatabaseLookup:" + $('input[name=optEmail_DatabaseLookup]').val() + ",";
-            if ($('input[name=optEmail_StandardizeCasing]').val() != "") opt += "StandardizeCasing:" + $('input[name=optEmail_StandardizeCasing]').val() + ",";
-
-            // get Check Name Options
-            if ($('input[name=optName_CorrectFirstName]').val() != "") opt += "CorrectFirstName:" + $('input[name=optName_CorrectFirstName]').val() + ",";
-            if ($('input[name=optName_StandardizeCompany]').val() != "") opt += "StandardizeCompany:" + $('input[name=optName_StandardizeCompany]').val() + ",";
-            if ($('input[name=optName_NameHint]').val() != "") opt += "NameHint:" + $('input[name=optName_NameHint]').val() + ",";
-            if ($('input[name=optName_GenderPopulation]').val() != "") opt += "GenderPopulation:" + $('input[name=optName_GenderPopulation]').val() + ",";
-            if ($('input[name=optName_GenderAggression]').val() != "") opt += "GenderAggression:" + $('input[name=optName_GenderAggression]').val() + ",";
-            if ($('input[name=optName_MiddleNameLogic]').val() != "") opt += "MiddleNameLogic:" + $('input[name=optName_MiddleNameLogic]').val() + ",";
-            if ($('input[name=optName_SalutationFormat]').val() != "") opt += "SalutationFormat:" + $('input[name=optName_SalutationFormat]').val() + ",";
-
-            // get Append Options
             if ($('input[name=optAppend_CentricHint]').val() != "") opt += "CentricHint:" + $('input[name=optAppend_CentricHint]').val() + ",";
-            if ($('input[name=optAppend_Append]').val() != "") opt += "Append:" + $('input[name=optAppend_Append]').val() + ",";
-            
+            if ($('input[name=optAppend_Append]').val() != "") opt += "Append:" + $('input[name=optAppend_Append]').val() + ",";            
             return opt;
         }
 

@@ -1,0 +1,396 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Smart Mover Demo</title>	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+    <style>
+        .header img {
+            float: right;
+            width: 188px;
+            height: 80px;
+            background: #555;
+        }
+
+        .header h2 {
+            position: relative;
+            top: 18px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body class="ui container">
+    <p>	
+    <div class="header">
+        <img src="melissa-global-intelligence.jpg" width="188" height="80" alt="logo" />
+        <h2 class="ui header">Smart Mover Demo</h2>		
+		<br>
+    </div>	
+	<br>
+	<div class="wiki">
+		
+	</div>
+    <div class="main ui container">	
+        <div class="ui top attached tabular menu">
+            <a class="item active" data-tab="tab-name">Input</a>
+			<a class="item" data-tab="tab-name3">Request</a>
+            <a class="item" data-tab="tab-name2">Output</a>
+        </div>
+        <!-- Input tab -->
+        <div class="ui bottom attached tab segment active" data-tab="tab-name">
+            <div class="ui two column stackable grid container">
+                <div class="column">
+				<a href="http://wiki.melissadata.com/index.php?title=SmartMover_V3">Smart Mover Wiki</a>
+                    <!-- License Key -->
+                    <div class="ui info message">					
+                        <div class="header">
+                            License Key
+                        </div>
+                        Enter here your encrypted and unique license key from Melissa Data. This is necessary for including with each request to the web service. If you do not have a license key, please contact your Melissa Data sales representative at 1-800-MELISSA (1-800-635-4772)
+                    </div>
+                    <div class="ui input right fluid field">
+                        <input type="text" placeholder="License Key..." name="id">
+                    </div>
+                    <!-- PAF ID -->
+                    <div class="ui info message">                   
+                        <div class="header">
+                            PAF ID
+                        </div>
+                        Identifies the individual list owner when the request is submitted froma broker account. This is required for any License Key issued to a broker account. Not applicable to CCOA
+                    </div>
+                    <div class="ui input right fluid field">
+                        <input type="text" placeholder="PAF ID..." name="pafid">
+                    </div>
+                    <!-- Actions -->
+                    <div class="ui info message">                    
+                        <div class="header">
+                            Actions
+                        </div>
+                        <ul class="list">
+                            <li>NCOA - US Change of Address Object</li>
+                            <li>CCOA - Canadian Change of Address Object</li>
+                        </ul>
+                    </div>
+                    <div class="ui two column stackable grid container">
+                        <div class="column">
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="action_Ncoa"> 
+                                <label>NCOA</label>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="action_Ccoa">                                 
+                                <label>CCOA</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column Responses -->
+                    <div class="ui info message">
+                        <div class="header">
+                            Column Responses
+                        </div>
+                        <ul class="list">
+                            <li>Group Original - Returns information on the original address that was submitted</li>
+                            <li>Group Parsed - Returns information on the parsed address that was returned</li>
+                            <li>DPV Footnotes - Indicates the level of matching between the current address and the USPS's DPV database. This footnote may be up to six characters long</li>
+                            <li>For further column descriptions, please refer <a href="http://wiki.melissadata.com/index.php?title=SmartMover_V3%3AResponse">here</a></li>
+                        </ul>
+                    </div>
+					<div class="ui two column stackable grid container">
+						<div class="column">
+                            <div class="ui checkbox">
+                                <input id='selectAll' type="checkbox"> 
+                                <label>Select All</label>
+                            </div>
+                            <br>
+                            <br>
+						   <div class="ui checkbox">
+								<input type="checkbox" name="col_grpName"> 
+								<label>Group Name</label>
+							</div>
+							<br>
+							<div class="ui checkbox">
+								<input type="checkbox" name="col_grpOriginal">   
+								<label>Group Original</label>
+							</div>
+							<br>
+							<div class="ui checkbox">
+								<input type="checkbox" name="col_grpParsed"> 
+								<label>Group Parsed</label>
+							</div>
+							<br>
+							<div class="ui checkbox">
+								<input type="checkbox" name="col_grpStandardized"> 
+								<label>Group Standardized</label>
+							</div>
+							<br>						
+						</div>
+						<div class="column">
+							<div class="ui checkbox">
+								<input type="checkbox" name="col_DPVFootnotes"> 
+								<label>DPV Footnotes</label>
+							</div>
+							<br>
+							<div class="ui checkbox">
+								<input type="checkbox" name="col_MoveReturnCode">
+								<label>Move Return Code</label>
+							</div>
+							<br>
+							<div class="ui checkbox">
+								<input type="checkbox" name="col_Plus4">  
+								<label>Plus4</label>
+							</div>
+							<br>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="col_PrivateMailbox"> 
+                                <label>Private Mailbox</label>
+                            </div>
+                            <br>
+                            <div class="ui checkbox">
+                                <input type="checkbox" name="col_Suite"> 
+                                <label>Suite</label>
+                            </div>
+                            <br>
+						</div>
+					</div>
+                    <!-- Options -->
+                    <div class="ui info message">
+                        <div class="header">
+                            Options
+                        </div>
+						<ul class="list">
+                            <li>Processing Type - Specifies the processing type. Standard matches in the following order: business, individual, and family</li>
+                            <li>List Owner Frequency Processing - Specifies the number of times per year the current mailing list is used for mailing. E.g., for monthly use 12, for quarterly use 4. Accepts a value from 1 to 52</li>
+                            <li>Number of Months Requested - Specifies the number of months back you want to search for a change of address. Accepts a value from 6 to 48</li>
+                        </ul>
+                    </div>
+                    <div class="ui two column stackable grid container">
+                        <div class="column">
+                            <div class="ui selection dropdown fluid">
+                                <input type="hidden" name="opt_processingType">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Processing Type</div>
+                                <div class="menu">
+                                    <div class="item" data-value="Standard">Standard</div>
+                                    <div class="item" data-value="IndividualAndBusiness">Individual and Business</div>
+                                    <div class="item" data-value="Business">Business</div>
+                                    <div class="item" data-value="Residential">Residential</div>				
+                                </div>
+                            </div>
+                            <div class="ui input fluid">
+                                <input type="text" placeholder="Number of Months Requested" name="opt_NumberOfMonthsRequested" size="22">                    
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ui input fluid">
+                                <input type="text" placeholder="List Owner Freq. Processing" name="opt_listOwnerFrequencyProcessing" size="25">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+					<h1>Personal Identity Information</h1>
+
+                    <h4>Name</h4>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="Full Name..." name="full">
+                    </div>
+                    <p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="First Name..." name="first">
+                    </div>
+                    <p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="Middle Name..." name="middle">
+                    </div>
+                    <p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="Last Name..." name="last">
+                    </div>
+                    <p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="Name Prefix..." name="namepre">
+                    </div>
+                    <p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="Name Suffix..." name="namesfx">
+                    </div>
+
+                    <h4>Company</h4>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="Company Name..." name="comp">
+                    </div>
+
+					<h4>Address</h4>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="Address1..." name="a1">
+                    </div>
+                    <p>
+					<div class="ui input right fluid">
+                        <input type="text" placeholder="Address2..." name="a2">
+                    </div>
+                    <p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="Suite..." name="ste">
+                    </div>
+                    <p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="Private Mailbox..." name="pmb">
+                    </div>
+                    <p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="City/Locality..." name="city">
+                    </div>
+                    <p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="State/Administrative Area..." name="state">
+                    </div>
+                    <p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="Zip/Postal Code..." name="postal">
+                    </div>
+                    <p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="Plus4..." name="pls4">
+                    </div>
+                    <p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="Country..." name="ctry">
+                    </div>
+                    <p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="Urbanization (Only Applicable for Puerto Rico Addresses)..." name="u">
+                    </div>
+                    <br>
+                    <br>
+                    <button class="ui icon button normal" onclick="doClear()">
+                        <i class="erase icon"></i>
+                        Clear
+                    </button>
+                    <button class="ui icon button positive" onclick="doVerify()">
+                        <i class="thumbs up icon"></i>
+                        Send Request
+                    </button>
+                </div>
+            </div>
+        </div>
+
+		<!-- REST tab -->
+        <div class="ui bottom attached tab segment" data-tab="tab-name3">
+            <pre name="restOutput">
+                Run a record through first
+            </pre>
+        </div>
+		
+        <!-- Output tab -->
+        <div class="ui bottom attached tab segment" data-tab="tab-name2">
+            <pre name="jsonOutput">
+                Run a record through first
+            </pre>
+        </div>
+        <p><br>
+    </div>
+
+    <script>
+        $('.menu .item').tab();
+        $('.ui.dropdown').dropdown();
+
+        $('#selectAll').change(function () {
+            if ($(this).prop('checked')) {
+               $('input').prop('checked', true);
+            } else {
+                $('input').prop('checked', false);
+            }
+        });
+        $('#selectAll').trigger('change');
+
+        function getColumnResponses() {
+            var columnResponses = "";
+            if ($('input[name=col_grpName]').is(':checked')) columnResponses += "grpName,";
+            if ($('input[name=col_grpOriginal]').is(':checked')) columnResponses += "grpOriginal,";
+			if ($('input[name=col_grpParsed]').is(':checked')) columnResponses += "grpParsed,";
+			if ($('input[name=col_grpStandardized]').is(':checked')) columnResponses += "grpStandardized,";
+			if ($('input[name=col_DPVFootnotes]').is(':checked')) columnResponses += "DPVFootNotes,";
+			if ($('input[name=col_MoveReturnCode]').is(':checked')) columnResponses += "MoveReturnCode,";
+			if ($('input[name=col_Plus4]').is(':checked')) columnResponses += "Plus4,";
+            if ($('input[name=col_PrivateMailbox]').is(':checked')) columnResponses += "PrivateMailbox,";
+            if ($('input[name=col_Suite]').is(':checked')) columnResponses += "Suite,";
+            return columnResponses;
+        }
+
+        function getActions() {
+            var actions = "";
+            if ($('input[name=action_Ncoa]').is(':checked')) actions += "NCOA,";
+            if ($('input[name=action_Ccoa]').is(':checked')) actions += "CCOA,";
+            return actions;
+        }
+
+        function getOpt() {
+            var opt = "";
+            if ($('input[name=opt_processingType]').val() != "") opt += "ProcessingType:" + $('input[name=opt_processingType]').val() + ",";
+            if ($('input[name=opt_listOwnerFrequencyProcessing]').val() != "") opt += "ListOwnerFreqProcessing:" + $('input[name=opt_listOwnerFrequencyProcessing]').val() + ",";
+            if ($('input[name=opt_NumberOfMonthsRequested]').val() != "") opt += "NumberofMonthsRequested:" + $('input[name=opt_NumberOfMonthsRequested]').val() + ",";
+            return opt;
+        }
+
+		function getUserInput() {
+			var userInput = "";
+			
+			// name
+            userInput += "&full=" + $('input[name=full]').val();
+            userInput += "&first=" + $('input[name=first]').val();
+            userInput += "&middle=" + $('input[name=middle]').val();            
+            userInput += "&last=" + $('input[name=last]').val();
+            userInput += "&namepre=" + $('input[name=namepre]').val();            
+            userInput += "&namesfx=" + $('input[name=namesfx]').val();
+
+            // company
+            userInput += "&comp=" + $('input[name=comp]').val();
+
+            // address
+			userInput += "&a1=" + $('input[name=a1]').val();
+			userInput += "&a2=" + $('input[name=a2]').val();
+            userInput += "&ste=" + $('input[name=ste]').val();
+            userInput += "&pmb=" + $('input[name=pmb]').val();
+			userInput += "&city=" + $('input[name=city]').val();
+			userInput += "&state=" + $('input[name=state]').val();
+			userInput += "&postal=" + $('input[name=postal]').val();
+            userInput += "&ctry=" + $('input[name=ctry]').val();
+            userInput += "&plus4=" + $('input[name=plus4]').val();
+            userInput += "&u=" + $('input[name=u]').val();
+
+			return userInput;
+		}
+
+        function doVerify() {
+			var xhttp = new XMLHttpRequest();
+			var url = "https://smartmover.melissadata.net/v3/WEB/SmartMover/doSmartMover?";
+			url += "id=" + encodeURIComponent($('input[name=id]').val());
+            url += "&pafid=" + encodeURIComponent($('input[name=pafid]').val());
+            url += "&act=" + getActions().replace(/,\s*$/, "");
+			url += "&cols=" + getColumnResponses().replace(/,\s*$/, "");
+			url += "&opt=" + getOpt().replace(/,\s*$/, "");
+			url += getUserInput();
+            url += "&format=JSON";
+			xhttp.open("GET", url, false);
+			xhttp.send();
+			console.log(url);
+			var response = JSON.parse(xhttp.responseText);
+			
+			$('pre[name=restOutput]').text('\n\n' + url + '\n\n\n');
+			$('pre[name=jsonOutput]').text(JSON.stringify(response, null, '\t'));
+			$('.ui.menu').find('.item').tab('change tab', 'tab-name2');
+        }
+
+        function doClear() {
+            $("input").each(function(index) {
+                $(this).val('');
+            })
+        }
+
+    </script>
+</body>
+</html>

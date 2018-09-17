@@ -1,0 +1,606 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Express Entry Demo</title>	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+    <style>
+        .header img {
+            float: right;
+            width: 188px;
+            height: 80px;
+            background: #555;
+        }
+
+        .header h2 {
+            position: relative;
+            top: 18px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body class="ui container">
+    <p>	
+    <div class="header">
+        <img src="melissa-global-intelligence.jpg" width="188" height="80" alt="logo" />
+        <h2 class="ui header">Express Entry Demo</h2>		
+		<br>
+    </div>	
+	<br>
+    <div class="main ui container">	
+        <div class="ui top attached tabular menu">
+            <a class="item active" data-tab="tab-name">Input</a>
+			<a class="item" data-tab="tab-name3">Request</a>
+            <a class="item" data-tab="tab-name2">Output</a>
+        </div>
+        <!-- Input tab -->
+        <div class="ui bottom attached tab segment active" data-tab="tab-name">
+            <div class="ui two column stackable grid container">
+                <div class="column">
+        			<a href="http://wiki.melissadata.com/index.php?title=Global_Express_Entry">Express Entry Wiki</a>
+                    <!-- License Key -->
+                    <div class="ui info message">					
+                        <div class="header">
+                            License Key
+                        </div>
+                        <br>
+                        <p>Enter here your encrypted and unique license key from Melissa Data. This is necessary for including with each request to the web service. If you do not have a license key, please contact your Melissa Data sales representative at 1-800-MELISSA (1-800-635-4772)</p>
+                        <br>
+                    </div> 
+                    <div class="ui input right fluid field">
+                        <input type="text" placeholder="License Key..." name="id">
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui info message">
+                        <div class="header">
+                            Select Scope and Endpoint
+                        </div>
+                        <br>
+                        <div class="ui two column stackable grid container">
+                            <div class="column">
+                                <ul class="list">
+                                    <h4>United States Endpoints</h4>
+                                    <li>Address</li>
+                                    <li>City and State</li>
+                                    <li>Free Form</li>
+                                    <li>Postal Code</li>
+                                    <li>Street</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <ul class="list">
+                                    <h4>Global Endpoints</h4>
+                                    <li>Address</li>
+                                    <li>Locality and Administrative Area</li>
+                                    <li>Free Form</li>
+                                    <li>Postal Code</li>
+                                    <li>Thoroughfare</li>
+                                    <li>Country</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui two column stackable grid container">
+                        <div class="column">
+                            <div class="ui selection dropdown fluid">
+                                <input type="hidden" name="selectScope" onchange="scopeSelected()">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Select Scope</div>
+                                <div class="menu">
+                                    <div class="item" data-value="scope_US">United States</div>
+                                    <div class="item" data-value="scope_global">Global</div>
+                                </div>
+                            </div>	
+                        </div>	
+                        <div class="column">
+                            <div class="ui selection dropdown fluid" id="selectEndpoint_container" style="display:none;"  onchange="endpointSelected()">
+                                <input type="hidden" name="selectEndpoint_selector" id="selectEndpoint_selector">
+                                <i class="dropdown icon"></i>
+                                <div class="default text" id="selectEndpoint_menuText">Select Endpoint</div>
+                                <div class="menu" id="selectEndpoint_menu">
+                                    <div class="item" data-value="selectEndpoint_address">Address</div>
+                                    <div class="item" data-value="selectEndpoint_locAdmArea">Locality and Administrative Area</div>
+                                    <div class="item" data-value="selectEndpoint_freeForm">Free Form</div>
+                                    <div class="item" data-value="selectEndpoint_postalCode">Postal Code</div>
+                                    <div class="item" data-value="selectEndpoint_thoroughfare">Thoroughfare</div>
+                                </div>
+                            </div>	
+                        </div>	
+                    </div>
+                </div>
+            </div>
+            <div id="endpointInput_container" class="ui container" style="display:none;">
+                <hr>
+                <div class="ui center aligned header">
+                    <h1 id="endpointInput_mainHeader"></h1>
+                </div>
+                <hr>
+                <!-- Input Fields -->
+                <h2 class="ui center aligned header">Input Fields</h2>
+                <div class="ui two column stackable grid container"> 
+                    <div class="column" id="endpointInput_fields_col1">
+                    </div>
+                    <div class="column">
+                        <div id="endpointInput_fields_col2">                            
+                        </div>
+                        <button class="ui icon button normal" onclick="doClear()">
+                            <i class="erase icon"></i>
+                            Clear
+                        </button>
+                        <button class="ui icon button positive" onclick="doVerify()">
+                            <i class="thumbs up icon"></i>
+                            Send Request
+                        </button>
+                    </div>                           
+                </div>                
+            </div>
+        </div>
+
+		<!-- REST tab -->
+        <div class="ui bottom attached tab segment" data-tab="tab-name3">
+            <pre name="restOutput">
+                Run a record through first
+            </pre>
+        </div>
+		
+        <!-- Output tab -->
+        <div class="ui bottom attached tab segment" data-tab="tab-name2">
+            <pre name="jsonOutput">
+                Run a record through first
+            </pre>
+        </div>
+        <p><br>
+    </div>
+
+    <script>
+        $('.menu .item').tab();
+        $('.ui.dropdown').dropdown();
+
+        function scopeSelected() {
+            var selectedScope = $('input[name=selectScope]').val();
+            var selectedEndpoint = $('input[name=selectEndpoint_selector]').val();
+            var menu = document.getElementById("selectEndpoint_menu");
+
+            if (selectedScope == "scope_US") {
+                menu.children[1].innerHTML = "City and State";
+                menu.children[4].innerHTML = "Street";
+                if (menu.children.length > 5) {
+                    menu.removeChild(menu.children[5]);
+                }
+            } else {
+                menu.children[1].innerHTML = "Locality and Administrative Area";
+                menu.children[4].innerHTML = "Thoroughfare";
+                if (menu.children.length < 6) {
+                    var node = document.createElement("div");
+                    node.setAttribute("class", "item");
+                    node.setAttribute("data-value", "selectEndpoint_country");
+                    var nodeText = document.createTextNode("Country");
+                    node.appendChild(nodeText);
+                    menu.appendChild(node);
+                }
+            }
+            document.getElementById("selectEndpoint_menuText").innerHTML = "Select Endpoint";
+            document.getElementById("selectEndpoint_menuText").setAttribute("class", "default text");
+            document.getElementById("selectEndpoint_selector").value = "";
+            document.getElementById("selectEndpoint_container").style.display = "";
+            document.getElementById("endpointInput_container").style.display = "none";
+        }
+
+        function endpointSelected() {
+            var selectedScope = $('input[name=selectScope]').val();
+            var selectedEndpoint = $('input[name=selectEndpoint_selector]').val();
+            
+            if (selectedScope == "scope_US") {
+                if (selectedEndpoint == "selectEndpoint_address") {
+                    // header
+                    document.getElementById("endpointInput_mainHeader").innerHTML = "Endpoint Selected: US Address";
+
+                    // Input field
+                    document.getElementById("endpointInput_fields_col1").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Address Line1...\" name=\"line1\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Suite...\" name=\"suite\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"City...\" name=\"city\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+
+                    document.getElementById("endpointInput_fields_col2").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"State...\" name=\"state\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder=\"Postal Code...\" name=\"postalcode\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder=\"Max Records...\" name=\"maxrecords\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+                } else if (selectedEndpoint == "selectEndpoint_locAdmArea") {
+                    // header
+                    document.getElementById("endpointInput_mainHeader").innerHTML = "Endpoint Selected: US City and State";
+
+                    // Input field
+                    document.getElementById("endpointInput_fields_col1").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"City...\" name=\"city\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"State...\" name=\"state\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+
+                    document.getElementById("endpointInput_fields_col2").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Postal Code...\" name=\"postalcode\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder=\"Max Records...\" name=\"maxrecords\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+                } else if (selectedEndpoint == "selectEndpoint_freeForm") {
+                    // header
+                    document.getElementById("endpointInput_mainHeader").innerHTML = "Endpoint Selected: US Free Form";
+
+                    // Input field
+                    document.getElementById("endpointInput_fields_col1").innerHTML = 
+                    "<div class=\"ui form\">"
+                        + "<textarea name=\"ff\" rows=\"5\" placeholder=\"Free Form Input...\"></textarea>"
+                        + "</div>"
+                        + "<br>";
+
+                    document.getElementById("endpointInput_fields_col2").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Max Records...\" name=\"maxrecords\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+                } else if (selectedEndpoint == "selectEndpoint_postalCode") {
+                    // header
+                    document.getElementById("endpointInput_mainHeader").innerHTML = "Endpoint Selected: US Postal Code";
+
+                    // Input field
+                    document.getElementById("endpointInput_fields_col1").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Postal Code...\" name=\"postalcode\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+
+                    document.getElementById("endpointInput_fields_col2").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder=\"Max Records...\" name=\"maxrecords\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+                } else {    // thoroughfare
+                    // header
+                    document.getElementById("endpointInput_mainHeader").innerHTML = "Endpoint Selected: US Street";
+
+                    // Input field
+                    document.getElementById("endpointInput_fields_col1").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Address Line1...\" name=\"line1\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder=\"Postal Code...\" name=\"postalcode\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+
+                    document.getElementById("endpointInput_fields_col2").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder=\"Max Records...\" name=\"maxrecords\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+                } 
+            } else {    // global scope
+                if (selectedEndpoint == "selectEndpoint_address") {
+                    // header
+                    document.getElementById("endpointInput_mainHeader").innerHTML = "Endpoint Selected: Global Address";
+
+                    // Input field
+                    document.getElementById("endpointInput_fields_col1").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Address Line1...\" name=\"line1\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Locality...\" name=\"locality\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Administrative Area...\" name=\"administrativeArea\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Country...\" name=\"country\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+
+                    document.getElementById("endpointInput_fields_col2").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Postal Code...\" name=\"postalcode\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder=\"Max Records...\" name=\"maxrecords\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder=\"Native Character Set (True or False)...\" name=\"nativeCharSet\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+                } else if (selectedEndpoint == "selectEndpoint_locAdmArea") {
+                    // header
+                    document.getElementById("endpointInput_mainHeader").innerHTML = "Endpoint Selected: Global Locality and Administrative Area";
+
+                    // Input field
+                    document.getElementById("endpointInput_fields_col1").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Locality...\" name=\"locality\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Postal Code...\" name=\"postalcode\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Country...\" name=\"country\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+
+                    document.getElementById("endpointInput_fields_col2").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder=\"Max Records...\" name=\"maxrecords\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder=\"Native Character Set (True or False)...\" name=\"nativeCharSet\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+                } else if (selectedEndpoint == "selectEndpoint_freeForm") {
+                    // header
+                    document.getElementById("endpointInput_mainHeader").innerHTML = "Endpoint Selected: Global Free Form";
+
+                    // Input field
+                    document.getElementById("endpointInput_fields_col1").innerHTML = 
+                    "<div class=\"ui form\">"
+                        + "<textarea name=\"ff\" rows=\"5\" placeholder=\"Free Form Input...\"></textarea>"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        + "<input type=\"text\" placeholder = \"Country...\" name=\"country\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+
+                    document.getElementById("endpointInput_fields_col2").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Max Records...\" name=\"maxrecords\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Native Character Set (True or False)...\" name=\"nativeCharSet\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+                } else if (selectedEndpoint == "selectEndpoint_postalCode") {
+                    // header
+                    document.getElementById("endpointInput_mainHeader").innerHTML = "Endpoint Selected: Global Postal Code";
+
+                    // Input field
+                    document.getElementById("endpointInput_fields_col1").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Postal Code...\" name=\"postalcode\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Country...\" name=\"country\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+
+                    document.getElementById("endpointInput_fields_col2").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder=\"Max Records...\" name=\"maxrecords\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+                } else if (selectedEndpoint == "selectEndpoint_thoroughfare") {
+                    // header
+                    document.getElementById("endpointInput_mainHeader").innerHTML = "Endpoint Selected: Global Thoroughfare";
+
+                    // Input field
+                    document.getElementById("endpointInput_fields_col1").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Thoroughfare...\" name=\"thoroughfare\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Postal Code...\" name=\"postalcode\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+
+                    document.getElementById("endpointInput_fields_col2").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Country...\" name=\"country\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder=\"Max Records...\" name=\"maxrecords\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+                } else {    // country
+                    // header
+                    document.getElementById("endpointInput_mainHeader").innerHTML = "Endpoint Selected: Global Country";
+
+                    // Input field
+                    document.getElementById("endpointInput_fields_col1").innerHTML = 
+                    "<div class=\"ui input fluid\">"
+                        +   "<input type=\"text\" placeholder = \"Country...\" name=\"country\">"
+                        + "</div>"
+                        + "<br>"
+                        + "<br>";
+
+                    document.getElementById("endpointInput_fields_col2").innerHTML = "";
+                } 
+            }
+            document.getElementById("endpointInput_container").style.display = ""; 
+        }
+
+		function getUserInput() {
+			var userInput = "";
+            var scopeSelected = $('input[name=selectScope]').val();
+            var endpointSelected = $('input[name=selectEndpoint_selector]').val();
+			
+            if (scopeSelected == "scope_US") {
+                if (endpointSelected == "selectEndpoint_address") {
+                    userInput += "&line1=" + encodeURIComponent($('input[name=line1]').val());
+                    userInput += "&suite=" + encodeURIComponent($('input[name=suite]').val());
+                    userInput += "&city=" + encodeURIComponent($('input[name=city]').val());
+                    userInput += "&state=" + encodeURIComponent($('input[name=state]').val());
+                    userInput += "&postalCode=" + encodeURIComponent($('input[name=postalcode]').val());
+                    userInput += "&maxRecords=" + encodeURIComponent($('input[name=maxrecords]').val());
+                } else if (endpointSelected == "selectEndpoint_locAdmArea") {
+                    userInput += "&city=" + encodeURIComponent($('input[name=city]').val());
+                    userInput += "&state=" + encodeURIComponent($('input[name=state]').val());
+                    userInput += "&postalCode=" + encodeURIComponent($('input[name=postalcode]').val());
+                    userInput += "&maxRecords=" + encodeURIComponent($('input[name=maxrecords]').val());
+                } else if (endpointSelected == "selectEndpoint_freeForm") {
+                    userInput += "&ff=" + encodeURIComponent($('textarea[name=ff]').val());
+                    userInput += "&maxRecords=" + $('input[name=maxrecords]').val();
+                } else if (endpointSelected == "selectEndpoint_postalCode") {
+                    userInput += "&postalCode=" + $('input[name=postalcode]').val();
+                    userInput += "&maxRecords=" + $('input[name=maxrecords]').val();
+                } else {    
+                    userInput += "&line1=" + encodeURIComponent($('input[name=line1]').val());
+                    userInput += "&postalCode=" + $('input[name=postalcode]').val();
+                    userInput += "&maxRecords=" + $('input[name=maxrecords]').val();
+                } 
+            } else {
+                if (endpointSelected == "selectEndpoint_address") {
+
+                    userInput += "&address1=" + encodeURIComponent($('input[name=line1]').val());
+                    userInput += "&locality=" + $('input[name=locality]').val();
+                    userInput += "&administrativeArea=" + $('input[name=administrativeArea]').val();
+                    userInput += "&postalCode=" + $('input[name=postalcode]').val();
+                    userInput += "&maxRecords=" + $('input[name=maxrecords]').val();
+                    userInput += "&nativeCharSet=" + $('input[name=nativeCharSet]').val();
+                } else if (endpointSelected == "selectEndpoint_locAdmArea") {
+                    userInput += "&locality=" + $('input[name=locality]').val();
+                    userInput += "&postalCode=" + $('input[name=postalcode]').val();
+                    userInput += "&country=" + $('input[name=country]').val();
+                    userInput += "&maxRecords=" + $('input[name=maxrecords]').val();
+                    userInput += "&nativeCharSet=" + $('input[name=nativeCharSet]').val();
+                } else if (endpointSelected == "selectEndpoint_freeForm") {
+                    userInput += "&ff=" + encodeURIComponent($('textarea[name=ff]').val());
+                    userInput += "&country=" + $('input[name=country]').val();
+                    userInput += "&maxRecords=" + $('input[name=maxrecords]').val();
+                    userInput += "&nativeCharSet=" + $('input[name=nativeCharSet]').val();
+                } else if (endpointSelected == "selectEndpoint_postalCode") {
+                    userInput += "&postalCode=" + $('input[name=postalcode]').val();
+                    userInput += "&country=" + $('input[name=country]').val();
+                    userInput += "&maxRecords=" + $('input[name=maxrecords]').val();
+                } else if (endpointSelected == "selectEndpoint_thoroughfare") {    
+                    userInput += "&thoroughfare=" + $('input[name=thoroughfare]').val();
+                    userInput += "&postalCode=" + $('input[name=postalcode]').val();
+                    userInput += "&country=" + $('input[name=country]').val();
+                    userInput += "&maxRecords=" + $('input[name=maxrecords]').val();
+                } else {    // country
+                    userInput += "&country=" + $('input[name=country]').val();
+                }
+            }		
+            return userInput;
+		}
+
+        function doVerify() {
+            var scopeSelected = $('input[name=selectScope]').val();
+            var endpointSelected = $('input[name=selectEndpoint_selector]').val();
+            var xhttp = new XMLHttpRequest();
+            var url;
+            if (scopeSelected == "scope_US") {
+                if (endpointSelected == "selectEndpoint_address") {
+                    url = "https://expressentry.melissadata.net/web/ExpressAddress?";
+                } else if (endpointSelected == "selectEndpoint_locAdmArea") {
+                    url = "https://expressentry.melissadata.net/web/ExpressCityState?";
+                } else if (endpointSelected == "selectEndpoint_freeForm") {
+                    url = "https://expressentry.melissadata.net/web/ExpressFreeForm?";
+                } else if (endpointSelected == "selectEndpoint_postalCode") {
+                    url = "https://expressentry.melissadata.net/web/ExpressPostalCode?";
+                } else {    // street
+                    url = "https://expressentry.melissadata.net/web/ExpressStreet?";
+                }
+            } else {        // global
+                if (endpointSelected == "selectEndpoint_address") {
+                    url = "https://expressentry.melissadata.net/web/GlobalExpressAddress?";
+                } else if (endpointSelected == "selectEndpoint_locAdmArea") {
+                    url = "https://expressentry.melissadata.net/web/GlobalExpressLocalityAdministrativeArea?";
+                } else if (endpointSelected == "selectEndpoint_freeForm") {
+                    url = "https://expressentry.melissadata.net/web/GlobalExpressFreeForm?";
+                } else if (endpointSelected == "selectEndpoint_postalCode") {
+                    url = "https://expressentry.melissadata.net/web/GlobalExpressPostalCode?";
+                } else if (endpointSelected == "selectEndpoint_thoroughfare") {
+                    url = "https://expressentry.melissadata.net/web/GlobalExpressThoroughfare?";
+                } else {    // country
+                    url = "https://expressentry.melissadata.net/web/GlobalExpressCountry?";
+                }
+            }
+			url += "id=" + encodeURIComponent($('input[name=id]').val());
+			url += getUserInput();
+            url += "&format=JSON"; 
+			xhttp.open("GET", url, false);
+			xhttp.send(); 
+			console.log(url);   
+			var response = JSON.parse(xhttp.responseText);
+			
+			$('pre[name=restOutput]').text('\n\n' + url + '\n\n\n');
+			$('pre[name=jsonOutput]').text(JSON.stringify(response, null, '\t'));
+			$('.ui.menu').find('.item').tab('change tab', 'tab-name2');
+        }
+
+        function doClear() {
+            // save scope and endpoint vars
+            var scopeSelected = $('input[name=selectScope]').val();
+            var endpointSelected = $('input[name=selectEndpoint_selector]').val();
+            var licenseKey = $('input[name=id]').val();
+
+            $("input").each(function(index) {
+                $(this).val('');
+            })
+            $("textarea").each(function(index) {
+                $(this).val('');
+            })
+
+            $('input[name=selectScope]').val(scopeSelected);
+            $('input[name=selectEndpoint_selector]').val(endpointSelected);
+            $('input[name=id]').val(licenseKey);
+        }
+
+    </script>
+</body>
+</html>

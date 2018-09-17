@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Street Route Demo</title>	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+    <style>
+        .header img {
+            float: right;
+            width: 188px;
+            height: 80px;
+            background: #555;
+        }
+
+        .header h2 {
+            position: relative;
+            top: 18px;
+            left: 10px;
+        }
+    </style>
+</head>
+<body class="ui container">
+    <p>	
+    <div class="header">
+        <img src="melissa-global-intelligence.jpg" width="188" height="80" alt="logo" />
+        <h2 class="ui header">Street Route Demo</h2>		
+		<br>
+    </div>	
+	<br>
+	<div class="wiki">	
+	</div>
+    <div class="main ui container">	
+        <div class="ui top attached tabular menu">
+            <a class="item active" data-tab="tab-name">Input</a>
+			<a class="item" data-tab="tab-name3">Request</a>
+            <a class="item" data-tab="tab-name2">Output</a>
+        </div>
+        <!-- Input tab -->
+        <div class="ui bottom attached tab segment active" data-tab="tab-name">
+            <div class="ui two column stackable grid container">
+                <div class="column">
+				<a href="http://wiki.melissadata.com/index.php?title=Street_Route_Cloud_API">Street Route Wiki</a>
+                    
+                    <!-- License Key -->
+                    <div class="ui info message">					
+                        <div class="header">
+                            License Key
+                        </div>
+                        Enter here your encrypted and unique license key from Melissa Data. This is necessary for including with each request to the web service. If you do not have a license key, please contact your Melissa Data sales representative at 1-800-MELISSA (1-800-635-4772)
+                    </div>
+                    <div class="ui input right fluid field">
+                        <input type="text" placeholder="License Key..." name="id">
+                    </div>
+                    <p>
+                    
+                    <!-- Options -->
+                    <div class="ui info message">
+                        <div class="header">
+                            Options
+                        </div>
+						<ul class="list">
+                            <li>Units - Specifies the returned distance unit scale</li>
+                        </ul>
+                    </div>
+                    <div class="ui selection dropdown">
+                        <input type="hidden" name="opt_Units">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Units</div>
+                        <div class="menu">
+                            <div class="item" data-value="mi">Miles</div>
+                            <div class="item" data-value="km">Kilometers</div>					
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="column">
+					<h1>Request Elements</h1>
+					<p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="Start Latitude..." name="StartLatitude">
+                    </div>
+                    <p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="Start Longitude..." name="StartLongitude">
+                    </div>
+                    <p>
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="End Latitude..." name="EndLatitude">
+                    </div>
+                    <p>                    
+                    <div class="ui input right fluid">
+                        <input type="text" placeholder="End Longitude..." name="EndLongitude">
+                    </div>
+                    <p>
+                    <!-- Buttons -->
+                    <p><br>
+                    <button class="ui icon button normal" onclick="doClear()">
+                        <i class="erase icon"></i>
+                        Clear
+                    </button>
+                    <button class="ui icon button positive" onclick="doVerify()">
+                        <i class="thumbs up icon"></i>
+                        Send Request
+                    </button>
+                </div>
+            </div>
+        </div>
+
+		<!-- REST tab -->
+        <div class="ui bottom attached tab segment" data-tab="tab-name3">
+            <pre name="restOutput">
+                Run a record through first
+            </pre>
+        </div>
+		
+        <!-- Output tab -->
+        <div class="ui bottom attached tab segment" data-tab="tab-name2">
+            <pre name="jsonOutput">
+                Run a record through first
+            </pre>
+        </div>
+        <p><br>
+    </div>
+
+    <script>
+        $('.menu .item').tab();
+        $('.ui.dropdown').dropdown();
+        $('.ui.accordion').accordion();
+
+        function getOpt() {
+            var opt = "";
+            if ($('input[name=opt_Units]').val() != "") opt  += "&Units=" + $('input[name=opt_Units]').val();
+            return opt;
+        }
+
+		function getUserInput() {
+			var userInput = "";	
+            userInput += "&StartLatitude=" + $('input[name=StartLatitude]').val();
+            userInput += "&EndLatitude=" + $('input[name=EndLatitude]').val();
+            userInput += "&StartLongitude=" + $('input[name=StartLongitude]').val();
+            userInput += "&EndLongitude=" + $('input[name=EndLongitude]').val();                       		
+			return userInput;
+		}
+
+        function doVerify() {
+			var xhttp = new XMLHttpRequest();
+			var url = "https://streetroute.melissadata.net/v1/WEB/StreetRoute/getDistance?";
+			url += "id=" + encodeURIComponent($('input[name=id]').val());
+			url += getOpt().replace(/,\s*$/, "");
+			url += getUserInput();
+            url += "&format=JSON";
+			xhttp.open("GET", url, false);
+			xhttp.send();
+			console.log(url);
+			var response = JSON.parse(xhttp.responseText);
+			
+			$('pre[name=restOutput]').text('\n\n' + url + '\n\n\n');
+			$('pre[name=jsonOutput]').text(JSON.stringify(response, null, '\t'));
+			$('.ui.menu').find('.item').tab('change tab', 'tab-name2');
+        }
+
+        function doClear() {
+            $("input").each(function(index) {
+                $(this).val('');
+            })
+        }
+
+    </script>
+</body>
+</html>
